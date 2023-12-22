@@ -1,0 +1,24 @@
+<h2>Create your posts</h2>
+
+
+<%= form_for :post, url: posts_path do |f|%>
+    
+    <% if @post.errors.any?%>
+        <% @post.errors.full_messages.each do |msg| %>
+            <% puts "ОШИБКА: " + msg %>
+            <div class = "alert alert-danger" role="alert"><%= msg %></div>
+        <% end %>
+    <% end %>
+
+    <p>
+        Название<br/>
+        <%=f.text_field(:title, {:placeholder => 'введите название статьи..', :class => 'form-control'}) %>
+    </p>
+    <p>
+        Текст статьи<br/>
+        <%= f.text_area(:body, {:placeholder => 'введите текст статьи..', :class => 'form-control'}) %>
+    </p>
+    <p>
+        <%= f.submit({:class => 'btn btn-success'}) %>
+    </p>
+<% end %>
