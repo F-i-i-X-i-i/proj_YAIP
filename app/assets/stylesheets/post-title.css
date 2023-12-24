@@ -1,0 +1,8 @@
+.post-title {
+    font-size: 70px;
+    font-weight: 600;
+    color: #343442;
+    text-align : center;
+    text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3,
+    0px 0px 20px #b393d3;
+}

@@ -1,31 +1,52 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
-
 en:
-  hello: "Hello world"
+  back: "Back"
+  main_page: "Main page"
+  edit: "Edit"
+  view: "View"
+  delete: "Delete"
+  post_updated: "Post updated"
+  post_created: "Post created"
+  create_your_posts: "Create your post"
+  edit_your_posts: "Edit your post"
+  to_publish: "Publish"
+  save_changes: "Save"
+  are_you_sure: "Are you sure"
+  edit_profile: "Edit"
+  log_out: "Log out"
+  log_in: "Log in"
+  sign_up: "Sign up"
+  main: "Main"
+  create: "Create post"
+  my_articles: "My post"
+  about: "About"
+
+  update: "Update"
+  cancel_my_account: "Cancel my account"
+  characters_minimum: "characters minimum"
+  edit_profile: "Edit profile"
+  #long_msg: "оставьте поле пустым, если вы не хотите его изменять"
+  long_msg: "leave blank if you don't want to change it"
+  #long_msg_2: "нужен для подтверждения ваших изменений"
+  long_msg_2: "we need your current password to confirm your changes"
+
+
+  comments: "Comments"
+
+  post:
+    author: "Author"
+    title: "title"
+    text: "text"
+  activerecord:
+    attributes:
+      post:
+        title: "title"
+        body: "text"
+  activerecord:
+    attributes:
+      user:
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        current_password: "Current password"
+        remember_me: "remember me"
+  

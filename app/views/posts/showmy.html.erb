@@ -1,0 +1,32 @@
+<h2 style = "text-align : center; color : rgba(255,255,255,0.8);"><%=t('my_articles')%></h2>
+
+<% @post.each do |post| %>
+<% if post.author == current_user.email %>
+<div class="album py-5">
+    <div class="container container_for_posts">
+
+          <div class="card shadow-sm">
+            <div class="bd-placeholder-img card-img-top" width="100%" height="225">
+              
+              <p x="30%" y="40%" width = "20%" fill="#eceeef" dy=".3em" style = "font-size: 2em; text-align:center;margin : 0 auto;"> <%= post.title %> </p>
+            </div>
+            <div class="card-body">
+              <p class="card-text" style = "font-style : italic;"><%=t('post.author')%>: <%= post.author %></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <%if user_signed_in? && current_user.email == post.author %>
+                  <%= link_to t("edit"), edit_post_path(post), :class => "btn btn-sm btn-outline-warning" %>
+                  <%end%>
+                  <%= link_to t("view"), post_path(post), :class => "btn btn-sm btn-outline-success" %>
+                  <%if user_signed_in? && current_user.email == post.author %>
+                  <%= link_to t("delete"), post_path(post), method: :delete, data:{confirm: t("are_you_sure") + "?"}, :class => "btn btn-sm btn-outline-danger" %>
+                  <%end%>
+                </div>
+                <small class="text-body-secondary"><%= post.created_at %></small>
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+<% end %>
+<% end %>

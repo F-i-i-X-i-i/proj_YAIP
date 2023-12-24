@@ -1,0 +1,59 @@
+<div class = "form_for_smth">
+
+<h2 style = "text-align : center;"><%=t('edit_profile')%></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field sign-up-div">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <br/>
+  
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field sign-up-div">
+    <%= f.label :password %> <i>(<%=t('long_msg')%>)</i><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> <%=t('characters_minimum')%></em>
+    <% end %>
+  </div>
+
+  <br/>
+
+  <div class="field sign-up-div">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <br/>
+
+  <div class="field sign-up-div">
+    <%= f.label :current_password %> <i>(<%=t('long_msg_2')%>)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+
+
+  <br/>
+  <div class="actions sign-up-div">
+    <%= f.submit t("update"), :class => "btn btn-secondary" %>
+  </div>
+  <br/>
+
+<% end %>
+
+<div class = "sign-up-div">
+  <%= button_to t("cancel_my_account"), registration_path(resource_name), data: { confirm: t("are_you_sure")+"?", turbo_confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger", :style => "width : 100%;" %>
+</div>
+
+<br/>
+
+<%= link_to t("back"), :back, :style => "text-align : center;
+    display:block;" %>
+</div>

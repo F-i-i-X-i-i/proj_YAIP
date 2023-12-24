@@ -1,4 +1,5 @@
-<h2>Create your posts</h2>
+<div class = "form_for_posts_create">
+<h2><%=t("create_your_posts")%></h2>
 
 
 <%= form_for :post, url: posts_path do |f|%>
@@ -11,14 +12,16 @@
     <% end %>
 
     <p>
-        Название<br/>
-        <%=f.text_field(:title, {:placeholder => 'введите название статьи..', :class => 'form-control'}) %>
+        <b class = "field_caption"><%=t("post.title")%></b><br/>
+        <%=f.text_field(:title, {:class => 'form-control'}) %>
+    </p>
+
+    <p>
+        <b class = "field_caption"><%=t("post.text")%></b><br/>
+        <%= f.text_area(:body, {:class => 'form-control'}) %>
     </p>
     <p>
-        Текст статьи<br/>
-        <%= f.text_area(:body, {:placeholder => 'введите текст статьи..', :class => 'form-control'}) %>
-    </p>
-    <p>
-        <%= f.submit({:class => 'btn btn-success'}) %>
+        <%= f.submit({:class => 'btn btn-success', :value => t('to_publish')}) %>
     </p>
 <% end %>
+</div>

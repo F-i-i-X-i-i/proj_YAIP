@@ -1,0 +1,54 @@
+ru:
+  back: "Назад"
+  main_page: "Главная страница"
+  edit: "Редактировать"
+  view: "Просмотр"
+  delete: "Удалить"
+  post_updated: "Статья обновлена"
+  post_created: "Статья опубликована"
+  create_your_posts: "Создать статью"
+  edit_your_posts: "Редактировать статью"
+  to_publish: "опубликовать"
+  save_changes: "Сохранить"
+  are_you_sure: "Вы уверены"
+  edit_profile: "Редактировать профиль"
+  log_out: "Выйти"
+  log_in: "Войти"
+  sign_up: "Зарегистрироваться"
+  main: "Главная"
+  create: "Создать статью"
+  my_articles: "Мои статьи"
+  about: "Про нас"
+
+  update: "Обновить"
+  cancel_my_account: "Удалить учетную запись"
+  sign_up: "Регистрация"
+  characters_minimum: "символов минимум"
+  edit_profile: "Редактировать профиль"
+  long_msg: "оставьте поле пустым, если вы не хотите его изменять"
+  # long_msg: "leave blank if you don't want to change it"
+  long_msg_2: "нужен для подтверждения ваших изменений"
+  #long_msg_2: "we need your current password to confirm your changes"
+
+
+  comments: "Комментарии"
+
+  post:
+    author: "Автор"
+    title: "Название статьи"
+    text: "Текст статьи"
+  activerecord:
+    attributes:
+      post:
+        title: "Название статьи"
+        body: "Текст"
+        
+  activerecord:
+    attributes:
+      user:
+        email: "Почта"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        current_password: "Текущий пароль"
+        remember_me: "запомнить меня"
+  

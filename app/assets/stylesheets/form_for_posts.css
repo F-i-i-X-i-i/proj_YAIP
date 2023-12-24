@@ -1,0 +1,24 @@
+.form_for_posts_create, .form_for_posts_update {
+    background-color: rgba(255,255,255,0.7);
+    margin: 0 auto;
+    padding: 1%;
+    width : 95%;
+    border-radius: 2em;
+}
+
+.form_for_posts_create h2, .form_for_posts_update h2 {
+    text-align: center;
+}
+
+.form_for_posts_create .btn-success, .form_for_posts_update .btn-success {
+  margin: 0 auto;
+  display: block;
+}
+
+.form_for_posts_update .form_text_area {
+    height : 700px;
+}
+
+.field_caption {
+    font-size: 1.5em;
+}

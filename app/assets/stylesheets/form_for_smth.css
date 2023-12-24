@@ -1,0 +1,8 @@
+.form_for_smth {
+    background-color: rgba(255,255,255,0.7);
+    margin: 0 auto;
+    padding: 1%;
+    width : 65%;
+    border-radius: 2em;
+    
+}

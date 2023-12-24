@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
-  http_basic_authenticate_with name: "admin", password: "12345", except: [:index, :show]
+  #http_basic_authenticate_with name: "admin", password: "12345", except: [:index, :show]
 
 
 
   def index
-    @post = Post.all
+    @post = Post.all.reverse
   end
 
   def new
@@ -15,6 +15,11 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def showmy
+    @post = Post.all.reverse
+    puts '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+  end
+
   def edit
     @post = Post.find(params[:id])
   end
@@ -22,7 +27,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if (@post.update(post_params))
-      flash[:success] = "Post updated!"
+      flash[:success] = t("post_updated") + '!'
       redirect_to @post
     else
       render :edit
@@ -38,8 +43,9 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.author = current_user.email
     if (@post.save)
-      flash[:success] = "Post created!"
+      flash[:success] = t("post_created") + '!'
       redirect_to @post
     else
       render :new
