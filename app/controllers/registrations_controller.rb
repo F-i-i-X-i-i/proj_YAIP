@@ -6,12 +6,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   # def new
-  #   super
+  #  super
   # end
 
   # POST /resource
   # def create
-  #   super
+  #  @user = User.new
+  #  puts '1111111111111111111111111111111'
+  #  if params[:email] == "mihail-22.05@mail.ru"
+  #    @user.superuser = true
+  #  else
+  #    @user.superuser = false
+  #  end
   # end
 
   # GET /resource/edit

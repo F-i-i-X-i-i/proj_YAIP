@@ -31,7 +31,18 @@ en:
 
 
   comments: "Comments"
+  comment_text: "Comment text"
+  comment_created: "Comment created"
+  comment_deleted: "Comment deleted"
 
+
+  user_management: "User management"
+  email: "Email"
+  password: "Password"
+  superuser: "Superuser"
+  lock: "Lock"
+  unlock: "Unlock"
+  
   post:
     author: "Author"
     title: "title"
@@ -49,4 +60,5 @@ en:
         password_confirmation: "Password confirmation"
         current_password: "Current password"
         remember_me: "remember me"
+        lock: "Lock"
   

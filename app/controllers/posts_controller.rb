@@ -1,8 +1,6 @@
 class PostsController < ApplicationController
   #http_basic_authenticate_with name: "admin", password: "12345", except: [:index, :show]
 
-
-
   def index
     @post = Post.all.reverse
   end
@@ -36,8 +34,13 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    Comment.all.each do |com|
+      if com.post_id == params[:id].to_i
+        puts 'Удаляю комментарий ' + com.body
+        com.destroy
+      end
+    end
     @post.destroy
-
     redirect_to posts_path
   end
 

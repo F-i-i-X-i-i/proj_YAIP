@@ -32,6 +32,16 @@ ru:
 
 
   comments: "Комментарии"
+  comment_text: "Текст комментария"
+  comment_created: "Комментарий оставлен"
+  comment_deleted: "Комментарий удален"
+
+  user_management: "Управление пользователями"
+  email: "Почта"
+  password: "Пароль"
+  superuser: "Админ"
+  lock: "Заблокировать"
+  unlock: "Разблокировать"
 
   post:
     author: "Автор"
@@ -51,4 +61,5 @@ ru:
         password_confirmation: "Подтверждение пароля"
         current_password: "Текущий пароль"
         remember_me: "запомнить меня"
+        lock: "Заблокировать"
   

@@ -1,0 +1,13 @@
+.my-table {
+    opacity: 0.8;
+    border: 1px solid black;
+}
+
+.my-table tr th, .my-table tr td {
+    border: 1px solid black;
+
+}
+
+.toggle-active-button {
+    width : auto;
+}

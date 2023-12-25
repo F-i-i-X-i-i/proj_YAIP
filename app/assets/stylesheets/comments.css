@@ -1,4 +1,16 @@
 .comments-block {
+    margin : 1%;
+    font-size: 1.2em;
+    background-color: rgba(170, 234, 255, 0.8);
+    padding : 20px;
+    margin:20px;
+    border : 2px solid rgba(0, 75, 100, 0.8);
+    border-radius : 20px;
+}
+
+
+.comment-header {
+    margin : 2%;
 
 }
 

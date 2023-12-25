@@ -1,17 +1,45 @@
 <div class = "show_articles">
-  <br/>
     <h1 class = "post-title"><%= @post.title %></h1>
+  <br/>
     <p class = "post-info"><%=t("post.author")%>: <%=@post.author%> | <%= @post.created_at %></p>
     <hr>
     <p style = "white-space: pre-line; font-size : 1.5em; padding : 5%;"><%= @post.body %></p>
     <hr>
-    <p class = "comments-title"><%= t("comments")%></p>
 
+    <%= form_for :comment, url: comments_path(:post_id => @post.id) do |f|%>
     
-
+      <p>
+          <b class = "field_caption"><%=t("comment_text")%></b><br/>
+          <%=f.text_field(:body, {:class => 'form-control', :required => true}) %>
+      </p>
+      <p>
+          <%= f.submit({:class => 'btn btn-success', :value => t('to_publish')}) %>
+      </p>
+  <% end %>
+  <%unless Comment.where(post_id: @post.id).empty? %>
     <hr>
+    <p class = "comments-title"><%=t('comments')%></p>
 
-    <%= link_to t("back"), :home, :class => "btn btn-secondary", :style => "
+    <% Comment.where(post_id: @post.id).each do |com|%>
+      <%if user_signed_in? && com.author == current_user.email %>
+      <div class="comment mt-4 text-justify float-left comments-block" style = "background-color : 	#99FFCC;">
+      <%else%>
+      <div class="comment mt-4 text-justify float-left comments-block">
+      <%end%>
+      <b class = "comment-author"><%=com.author%></b>
+
+      <a style = "color : #404040;">at <%=com.created_at%></a>
+      <%if user_signed_in? && com.author == current_user.email %>
+        <%= link_to t("delete"), comment_path(:comment_id => com.id, :post_id => @post.id), method: :delete, data:{confirm: t("are_you_sure") + "?"}, :class => "btn btn-sm btn-outline-danger", :style => "float:right;" %>
+      <%end%>
+      <hr>
+      <p><%=com.body%></p>
+      </div>
+    <%end%>
+  <%end%>
+  <hr>
+
+  <%= link_to t("back"), :home, :class => "btn btn-secondary", :style => "
   margin: 0 auto;
   display: block;
   width: 20%;" %>
