@@ -1,0 +1,27 @@
+
+
+#content {
+    overflow: hidden;    
+    -webkit-animation: v 8s infinite;
+    animation: none;
+}
+
+
+
+@keyframes v{
+  0% {background:#098DD0;}
+  20%{background:#D00979;}
+  40%{background:#D04E09;}
+  60%{background:#D0B809;}
+  80%{background:#09D01A;}
+  100%{background:#098DD0;}
+}
+
+@-webkit-keyframes v{
+    0% {background:#098DD0;}
+    20%{background:#D00979;}
+    40%{background:#D04E09;}
+    60%{background:#D0B809;}
+    80%{background:#09D01A;}
+    100%{background:#098DD0;}
+}

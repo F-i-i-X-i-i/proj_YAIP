@@ -4,6 +4,12 @@ ruby "3.2.2"
 
 gem 'devise'
 
+gem 'jquery-rails'
+
+gem 'rails-ujs'
+
+gem 'turbolinks'
+
 gem 'rails-i18n'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
